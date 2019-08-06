@@ -1,0 +1,1 @@
+$FT_USER is a variable where you can fill in the group you want
