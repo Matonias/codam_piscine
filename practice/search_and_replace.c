@@ -34,8 +34,12 @@ int 	main(int argc, char **argv)
 
 	if (argc == 4)
 	{
-		str = ft_replace_letter(argv[1], *argv[2], *argv[3]);
-		ft_putstr(str);
-	}
+		if (argv[2][1] == '\0' && argv[3][1] == '\0')
+		{
+			str = ft_replace_letter(argv[1], *argv[2], *argv[3]);
+			ft_putstr(str);
+		}
+	} 
+	ft_putstr("\n");
 	return (0);
 }
