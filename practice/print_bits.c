@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   swap_bits.c                                        :+:    :+:            */
+/*   print_bits.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mkolkman <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/08/28 16:50:34 by mkolkman      #+#    #+#                 */
-/*   Updated: 2019/08/28 16:50:36 by mkolkman      ########   odam.nl         */
+/*   Created: 2019/08/28 18:15:55 by mkolkman      #+#    #+#                 */
+/*   Updated: 2019/08/28 18:15:57 by mkolkman      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_functions.h"
 
-unsigned char	swap_bits(unsigned char octet)
+void	print_bits(unsigned char octet)
 {
-	return((octet >> 4) | (oct	et << 4));
-}
+    int z; 
+    int oct;
 
-void bin(int n)
-{
-    /* Step 1 */
-    if (n > 1)
-        bin(n/2);
-    /* Step 2 */
-    printf("%d", n % 2);
+    z = 128;
+    oct = octet;
+    while (z > 0)
+    {
+        if (oct & z)
+            write(1, "1", 1);
+        else
+            write(1, "0", 1);
+        z >>= 1;
+    }
 }
 
 int		main(void)
 {
-	unsigned char c;
-	printf("%d", 100);
-	c = swap_bits(100);
-	printf("%d", c);
-	// bin(c);
+	print_bits(128);
 }
