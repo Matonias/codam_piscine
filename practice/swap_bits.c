@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_functions.h                                     :+:    :+:            */
+/*   swap_bits.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mkolkman <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/08/27 16:30:34 by mkolkman      #+#    #+#                 */
-/*   Updated: 2019/08/27 16:30:39 by mkolkman      ########   odam.nl         */
+/*   Created: 2019/08/28 16:50:34 by mkolkman      #+#    #+#                 */
+/*   Updated: 2019/08/28 16:50:36 by mkolkman      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_FUNCTIONS_H
-# define FT_FUNCTIONS_H
+#include "ft_functions.h"
 
-#include <unistd.h>
-#include <stdio.h>
+unsigned char	swap_bits(unsigned char octet)
+{
+	return((octet >> 4) | (octet << 4));
+}
 
-void	ft_putstr(char *str);
-char    *ft_strcpy(char *s1, char *s2);
+void bin(int n)
+{
+    /* Step 1 */
+    if (n > 1)
+        bin(n/2);
+    /* Step 2 */
+    printf("%d", n % 2);
+}
 
-#endif
+int		main(void)
+{
+	unsigned char c;
+	printf("%d", 100);
+	c = swap_bits(100);
+	printf("%d", c);
+	// bin(c);
+}
